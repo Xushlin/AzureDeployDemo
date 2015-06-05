@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>2.6</ProductVersion>
+    <ProjectGuid>57edbd7c-125d-466a-b5ca-f7ba3c68520f</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AzureCloudServiceDemo</RootNamespace>
+    <AssemblyName>AzureCloudServiceDemo</AssemblyName>
+    <StartDevelopmentStorage>True</StartDevelopmentStorage>
+    <Name>AzureCloudServiceDemo</Name>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <!-- Items for the project -->
+  <ItemGroup>
+    <ServiceDefinition Include="ServiceDefinition.csdef" />
+    <ServiceConfiguration Include="ServiceConfiguration.Local.cscfg" />
+    <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="MyCacheWorkerRole\MyCacheWorkerRole.csproj">
+      <Name>MyCacheWorkerRole</Name>
+      <Project>{d52fd074-9030-44bd-a548-4bd192bdc888}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>MyCacheWorkerRole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+    <ProjectReference Include="MyWCFServiceWebRole\MyWCFServiceWebRole.csproj">
+      <Name>MyWCFServiceWebRole</Name>
+      <Project>{b79f208b-0001-48ed-9ba1-413177779cd8}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>MyWCFServiceWebRole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+    <ProjectReference Include="MyWebRole\MyWebRole.csproj">
+      <Name>MyWebRole</Name>
+      <Project>{56376072-4046-4af3-85f8-a9f6c406e6b3}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>MyWebRole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+    <ProjectReference Include="MyWorkerRoleWithSBQueue\MyWorkerRoleWithSBQueue.csproj">
+      <Name>MyWorkerRoleWithSBQueue</Name>
+      <Project>{673cf176-a910-4245-872c-103bcd0a6398}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>MyWorkerRoleWithSBQueue</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+    <ProjectReference Include="MyWorkerRole\MyWorkerRole.csproj">
+      <Name>MyWorkerRole</Name>
+      <Project>{b295b5d2-cdcf-445f-8bbc-36883e8f00c3}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>MyWorkerRole</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MyCacheWorkerRoleContent\" />
+    <Folder Include="MyWCFServiceWebRoleContent\" />
+    <Folder Include="MyWebRoleContent\" />
+    <Folder Include="MyWorkerRoleContent\" />
+    <Folder Include="MyWorkerRoleWithSBQueueContent\" />
+  </ItemGroup>
+  <ItemGroup>
+    <DiagnosticsConfiguration Include="MyCacheWorkerRoleContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="MyWCFServiceWebRoleContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="MyWebRoleContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="MyWorkerRoleContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="MyWorkerRoleWithSBQueueContent\diagnostics.wadcfgx" />
+  </ItemGroup>
+  <!-- Import the target files for this project template -->
+  <PropertyGroup>
+    <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
+    <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\2.6\</CloudExtensionsDir>
+  </PropertyGroup>
+  <Import Project="$(CloudExtensionsDir)Microsoft.WindowsAzure.targets" />
+</Project>
