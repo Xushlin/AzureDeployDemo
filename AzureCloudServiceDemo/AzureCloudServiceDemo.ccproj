@@ -37,14 +37,6 @@
     <ServiceConfiguration Include="ServiceConfiguration.Cloud.cscfg" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="MyCacheWorkerRole\MyCacheWorkerRole.csproj">
-      <Name>MyCacheWorkerRole</Name>
-      <Project>{d52fd074-9030-44bd-a548-4bd192bdc888}</Project>
-      <Private>True</Private>
-      <RoleType>Worker</RoleType>
-      <RoleName>MyCacheWorkerRole</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
     <ProjectReference Include="MyWebRole\MyWebRole.csproj">
       <Name>MyWebRole</Name>
       <Project>{56376072-4046-4af3-85f8-a9f6c406e6b3}</Project>
@@ -53,36 +45,12 @@
       <RoleName>MyWebRole</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
-    <ProjectReference Include="MyWorkerRoleWithSBQueue\MyWorkerRoleWithSBQueue.csproj">
-      <Name>MyWorkerRoleWithSBQueue</Name>
-      <Project>{673cf176-a910-4245-872c-103bcd0a6398}</Project>
-      <Private>True</Private>
-      <RoleType>Worker</RoleType>
-      <RoleName>MyWorkerRoleWithSBQueue</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
-    <ProjectReference Include="MyWorkerRole\MyWorkerRole.csproj">
-      <Name>MyWorkerRole</Name>
-      <Project>{b295b5d2-cdcf-445f-8bbc-36883e8f00c3}</Project>
-      <Private>True</Private>
-      <RoleType>Worker</RoleType>
-      <RoleName>MyWorkerRole</RoleName>
-      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MyCacheWorkerRoleContent\" />
-    <Folder Include="MyWCFServiceWebRoleContent\" />
     <Folder Include="MyWebRoleContent\" />
-    <Folder Include="MyWorkerRoleContent\" />
-    <Folder Include="MyWorkerRoleWithSBQueueContent\" />
   </ItemGroup>
   <ItemGroup>
-    <DiagnosticsConfiguration Include="MyCacheWorkerRoleContent\diagnostics.wadcfgx" />
-    <DiagnosticsConfiguration Include="MyWCFServiceWebRoleContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="MyWebRoleContent\diagnostics.wadcfgx" />
-    <DiagnosticsConfiguration Include="MyWorkerRoleContent\diagnostics.wadcfgx" />
-    <DiagnosticsConfiguration Include="MyWorkerRoleWithSBQueueContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <!-- Import the target files for this project template -->
   <PropertyGroup>

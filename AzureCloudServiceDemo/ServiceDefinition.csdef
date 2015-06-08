@@ -15,26 +15,4 @@
       <InputEndpoint name="Endpoint1" protocol="http" port="80" />
     </Endpoints>
   </WebRole>
-  <WorkerRole name="MyWorkerRole" vmsize="Small">
-    <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
-    </ConfigurationSettings>
-  </WorkerRole>
-  <WorkerRole name="MyCacheWorkerRole" vmsize="Small">
-    <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
-    </ConfigurationSettings>
-    <Imports>
-      <Import moduleName="Caching" />
-    </Imports>
-    <LocalResources>
-      <LocalStorage name="DiagnosticStore" sizeInMB="20000" cleanOnRoleRecycle="false" />
-    </LocalResources>
-  </WorkerRole>
-  <WorkerRole name="MyWorkerRoleWithSBQueue" vmsize="Small">
-    <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" />
-      <Setting name="Microsoft.ServiceBus.ConnectionString" />
-    </ConfigurationSettings>
-  </WorkerRole>
 </ServiceDefinition>
