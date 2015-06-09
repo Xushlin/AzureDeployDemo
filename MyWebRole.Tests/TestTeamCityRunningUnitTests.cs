@@ -10,11 +10,11 @@ namespace MyWebRole.Tests
         public void Test()
         {
             //Arrange
-            var first = 1000;
-            var second = 2000;
+            const int first = 1000;
+            const int second = 2000;
             
             //Act
-            var sum = first + second;
+            const int sum = first + second;
             
             //Assert
             sum.Should().Be(3000);
