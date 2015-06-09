@@ -3,7 +3,7 @@
   <Role name="MyWebRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=butlerdevelop;AccountKey=3fJhuJ9sX3s2CpeRh7s7m1s3qmJDOrWPD7W/tvNmDJF4OTjWUxFtg4zvKTpmskTu8K12Wr3OCKz3UwFSejNmrg==" />
     </ConfigurationSettings>
   </Role>
 </ServiceConfiguration>
