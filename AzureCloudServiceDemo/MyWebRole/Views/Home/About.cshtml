@@ -1,4 +1,5 @@
-﻿@{
+﻿@using System.Configuration
+@{
     ViewBag.Title = "About";
 }
 <h2>@ViewBag.Title.</h2>
@@ -6,3 +7,5 @@
 
 <p>Use this area to provide additional information.</p>
 <p>====Hello Cloud Service!== </p>
+
+<p>Transform web config:@ConfigurationManager.AppSettings["test"]</p>
