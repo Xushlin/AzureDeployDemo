@@ -210,7 +210,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="AzureCloudServiceDemo.nuspec" />
+    <Content Include="MyWebRole.nuspec" />
     <None Include="Properties\PublishProfiles\TeamCityDeployDemo - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\Deployment.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
