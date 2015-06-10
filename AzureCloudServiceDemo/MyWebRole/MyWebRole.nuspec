@@ -7,7 +7,7 @@
     <description>AzureCloudServiceDemo</description>
   </metadata>
   <files>
-    <file src="..\bin\Release\*" target=""/>
- 
+    <file src="..\bin\Release\app.publish\*" target=""/>
+    <file src="..\bin\Release\app.publish\Extensions\*" target=""/>
   </files>
 </package>
