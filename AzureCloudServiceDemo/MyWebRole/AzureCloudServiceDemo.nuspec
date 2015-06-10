@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>AzureCloudServiceDemo</id>
+    <version>1.1.2</version>
+    <authors>Test</authors>
+    <description>AzureCloudServiceDemo</description>
+  </metadata>
+  <files>
+    <file src="..\bin\Release\app.publish\*" target=""/>
+    <file src="..\bin\Release\app.publish\Extensions\*" target=""/>
+  </files>
+</package>
