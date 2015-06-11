@@ -19,5 +19,20 @@ namespace MyWebRole.Tests
             //Assert
             sum.Should().Be(3000);
         }
+        
+        [Test]
+        public void Test1()
+        {
+            //Arrange
+             decimal first = 1000;
+             int second = 1000;
+            
+            //Act
+            var result = first.Equals(second);
+            var result1 = first == second;
+            //Assert
+            result.Should().BeTrue();
+            result1.Should().BeTrue();
+        }
     }
 }
