@@ -3,11 +3,11 @@
   <metadata>
     <id>AzureCloudServiceDemo</id>
     <version>$Version$</version>
-    <authors>Test</authors>
+    <authors>Michael</authors>
     <description>AzureCloudServiceDemo</description>
   </metadata>
   <files>
-    <file src="..\bin\Release\app.publish\*" target=""/>
-    <file src="..\bin\Release\app.publish\Extensions\*" target=""/>
+    <file src="..\bin\$configuration$\app.publish\*" target=""/>
+    <file src="..\bin\$configuration$\app.publish\Extensions\*" target=""/>
   </files>
 </package>
