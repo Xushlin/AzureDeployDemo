@@ -18,6 +18,13 @@ namespace MyWebRole.Controllers
             return View();
         }
 
+        public ActionResult CallWCFService()
+        {
+            var client = new ServiceReference1.Service1Client();
+            var model = new ServiceReference1.WCFModel(){FirstName = "Peter",LastName = "Lee"};
+            return Content(client.ShowName(model));
+        }
+
         public string GetCacheMessage()
         {
             if (myCache == null)

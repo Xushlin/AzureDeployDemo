@@ -46,6 +46,14 @@
       <RoleName>MyCacheRole</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
+    <ProjectReference Include="MyWCFService\MyWCFService.csproj">
+      <Name>MyWCFService</Name>
+      <Project>{d98e9308-be8e-4e16-9ae8-f3f7e1fa665d}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>MyWCFService</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
     <ProjectReference Include="MyWebRole\MyWebRole.csproj">
       <Name>MyWebRole</Name>
       <Project>{56376072-4046-4af3-85f8-a9f6c406e6b3}</Project>
@@ -57,11 +65,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MyCacheRoleContent\" />
+    <Folder Include="MyWCFServiceContent\" />
     <Folder Include="MyWebRoleContent\" />
     <Folder Include="Profiles" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="MyCacheRoleContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="MyWCFServiceContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="MyWebRoleContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <ItemGroup>
