@@ -83,7 +83,7 @@
     <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\2.6\</CloudExtensionsDir>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Develop' ">
-    <OutputPath>bin\Development\</OutputPath>
+    <OutputPath>bin\Develop\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Production' ">
     <OutputPath>bin\Production\</OutputPath>
