@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Web.Mvc;
-using MyCacheRole;
+
 
 namespace MyWebRole.Controllers
 {
@@ -16,8 +16,8 @@ namespace MyWebRole.Controllers
 
         public string GetCacheMessage()
         {
-            var cacheWorkerRole=new CacheWorkerRole();
-            return cacheWorkerRole.GetCacheMessage();
+         
+            return "HELLO";
         }
 
         public ActionResult CallWCFService()

@@ -355,12 +355,6 @@
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\ServiceReference1\" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\MyCacheRole\MyCacheRole.csproj">
-      <Project>{2EFF2371-90E6-40B1-B4D7-F25F22FDC3BB}</Project>
-      <Name>MyCacheRole</Name>
-    </ProjectReference>
-  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
