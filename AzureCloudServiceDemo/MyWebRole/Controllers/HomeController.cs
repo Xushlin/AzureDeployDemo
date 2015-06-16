@@ -9,8 +9,6 @@ namespace MyWebRole.Controllers
     {
         public static DataCache MyCache;
 
-        public static Random randomizer = new Random();
-
         public ActionResult Index()
         {
             return View();
