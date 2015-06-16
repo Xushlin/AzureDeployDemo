@@ -5,6 +5,9 @@
     <ConfigurationSettings>
       <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=butlerdevelop;AccountKey=3fJhuJ9sX3s2CpeRh7s7m1s3qmJDOrWPD7W/tvNmDJF4OTjWUxFtg4zvKTpmskTu8K12Wr3OCKz3UwFSejNmrg==" />
       <Setting name="Microsoft.WindowsAzure.Plugins.Caching.ClientDiagnosticLevel" value="4" />
+      <Setting name="DataConnectionString" value="UseDevelopmentStorage=true" />
+      <Setting name="ContainerName" value="gallery" />
+      <Setting name="StorageConnectionString" value="UseDevelopmentStorage=true" />
     </ConfigurationSettings>
   </Role>
   <Role name="MyCacheRole">

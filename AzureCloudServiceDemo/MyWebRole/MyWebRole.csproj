@@ -83,6 +83,10 @@
       <HintPath>..\packages\WindowsAzure.Storage.4.3.0\lib\net40\Microsoft.WindowsAzure.Storage.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.WindowsAzure.StorageClient, Version=1.7.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\UnofficialAzure.StorageClient.1.0.0\lib\Microsoft.WindowsAzure.StorageClient.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Microsoft.WindowsFabric.Common">
       <HintPath>..\packages\Microsoft.WindowsAzure.Caching.2.6.0.0\lib\net40-full\Microsoft.WindowsFabric.Common.dll</HintPath>
     </Reference>
@@ -213,13 +217,18 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Common\DataBlobStorageHelper.cs" />
+    <Compile Include="Common\DataTableStorageHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DataBlobStorageController.cs" />
+    <Compile Include="Controllers\DataTableStorageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\CustomerEntity.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -317,6 +326,12 @@
     <None Include="Service References\ServiceReference1\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
+    <Content Include="Views\DataBlobStorage\Detail.cshtml" />
+    <Content Include="Views\DataBlobStorage\Index.cshtml" />
+    <Content Include="Views\DataTableStorage\Detail.cshtml" />
+    <Content Include="Views\DataTableStorage\EditCustomer.cshtml" />
+    <Content Include="Views\DataTableStorage\Index.cshtml" />
+    <Content Include="Views\DataTableStorage\InsertData.cshtml" />
     <None Include="Web.Develop.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
