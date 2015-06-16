@@ -21,6 +21,7 @@ namespace MyWebRole.Common
             //获得BlobContainer对象
             client.GetContainerReference(_containerName)
                     .CreateIfNotExist();
+            client.GetContainerReference(_containerName).SetPermissions(new BlobContainerPermissions { PublicAccess = BlobContainerPublicAccessType.Container });
             return client.GetContainerReference(_containerName);
         }
         public static string UploadFile(HttpPostedFileBase imageFile)//string fileName, string contentType, byte[] data)
