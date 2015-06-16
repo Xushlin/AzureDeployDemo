@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Web.Mvc;
+using Microsoft.ApplicationServer.Caching;
 using MyCacheRole;
 
 namespace MyWebRole.Controllers
 {
     public class HomeController : Controller
     {
-        
+        public static DataCache MyCache;
+
         public static Random randomizer = new Random();
 
         public ActionResult Index()
@@ -14,10 +16,17 @@ namespace MyWebRole.Controllers
             return View();
         }
 
+//        public string GetCacheMessage()
+//        {
+//            var cacheWorkerRole=new CacheWorkerRole();
+//            return cacheWorkerRole.GetCacheMessage();
+//        }
+
         public string GetCacheMessage()
         {
-            var cacheWorkerRole=new CacheWorkerRole();
-            return cacheWorkerRole.GetCacheMessage();
+            MyCache = new DataCache("default");
+            MyCache.Put("MyCache", "Hello cache");
+            return MyCache.Get("MyCache") as string; 
         }
 
         public ActionResult CallWCFService()
