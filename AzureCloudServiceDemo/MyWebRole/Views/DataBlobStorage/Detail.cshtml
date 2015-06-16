@@ -1,0 +1,15 @@
+﻿@model Microsoft.WindowsAzure.StorageClient.CloudBlockBlob
+
+@{
+    ViewBag.Title = "title";
+}
+
+<div class="row">
+    <img src="@Model.Uri" />  
+</div>
+<div class="row">
+    <a href="@Url.Action("Index", "DataBlobStorage")">Back To List</a>
+</div>
+
+
+

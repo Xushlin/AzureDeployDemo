@@ -1,0 +1,56 @@
+﻿@model MyWebRole.Models.CustomerEntity
+
+@{
+    ViewBag.Title = "title";
+}
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>First Name</h3>
+    </div>
+    <div class="col-md-8">
+        <h3>@Model.FirstName</h3>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Last Name</h3>
+    </div>
+    <div class="col-md-8">
+        <h3>@Model.LastName</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Email</h3>
+    </div>
+    <div class="col-md-8">
+        <h3>@Model.Email</h3>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>PhoneNumber</h3>
+    </div>
+    <div class="col-md-8">
+        <h3>@Model.PhoneNumber</h3>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <h3>Picture</h3>
+    </div>
+    <div class="col-md-8">
+        <img src="@Model.Picture" />
+    </div>
+</div>
+
+<div class="row">
+    <a href="@Url.Action("Index", "DataTableStorage")">Back To List</a>
+</div>

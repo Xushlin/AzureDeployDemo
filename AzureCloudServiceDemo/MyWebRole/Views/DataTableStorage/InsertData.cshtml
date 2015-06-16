@@ -1,0 +1,65 @@
+﻿@model dynamic
+
+@{
+    ViewBag.Title = "title";
+}
+
+
+<br/>
+
+<form action="@Url.Action("InsertData", "DataTableStorage")" method="post" enctype="multipart/form-data">
+    <div class="row">
+        <div class="col-md-4">
+            <h3>First Name</h3>
+        </div>
+        <div class="col-md-8">
+            <input type="text" name="FirstName" />
+
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Last Name</h3>
+        </div>
+        <div class="col-md-8">
+            <input type="text" name="LastName" />
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Email</h3>
+        </div>
+        <div class="col-md-8">
+            <input type="text" name="Email" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>PhoneNumber</h3>
+        </div>
+        <div class="col-md-8">
+            <input type="text" name="PhoneNumber" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+            <h3>Picture</h3>
+        </div>
+        <div class="col-md-8">
+            <input type="file" name="imageFile" />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-4">
+
+        </div>
+        <div class="col-md-8">
+            <input type="submit" value="Save" />
+        </div>
+    </div>
+</form>
+<div class="row">
+    <a href="@Url.Action("Index", "DataTableStorage")">Back To List</a>
+</div>
+

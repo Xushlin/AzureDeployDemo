@@ -1,0 +1,79 @@
+﻿@using MyWebRole.Models
+@model System.Collections.Generic.List<CustomerEntity>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<br/>
+    <div class="row">
+        <div class="col-md-2">
+
+            <a href="@Url.Action("InsertData", "DataTableStorage")">Insert</a>
+        </div>
+        <div class="col-md-10">
+            @{
+                var customer = ViewBag.SearchCustomer == null ? new CustomerEntity() : (CustomerEntity)ViewBag.SearchCustomer;
+            }
+
+            <form action="@Url.Action("SearchData", "DataTableStorage")" method="post">
+                
+                <input type="text" name="FirstName" value="@customer.FirstName" placeholder="FirstName"/>
+                <input type="text" name="LastName" value="@customer.LastName" placeholder="LastName"/>
+
+                <input type="submit" value="Search"/>
+            </form>
+        </div>
+    </div>
+
+    <div class="row">
+        <table class="table table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Image</th>
+                    <th>Email</th>
+                    <th>PhoneNumber</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @item.FirstName
+                        </td>
+                        <td>
+                            @item.LastName
+                        </td>
+                        <td>
+                            <img src="@item.Picture" width="200" />
+                        </td>
+                        <td>
+                            @item.Email
+                        </td>
+                        <td>
+                            @item.PhoneNumber
+                        </td>
+                        <td>
+                            <a href="@Url.Action("Detail", "DataTableStorage", new
+                                     {
+                                         PartitionKey = item.PartitionKey
+                                     })">Detail</a> |
+
+                            <a href="@Url.Action("Delete", "DataTableStorage", new
+                                     {
+                                         PartitionKey = item.PartitionKey
+                                     })">Delete</a> |
+                            <a href="@Url.Action("EditCustomer", "DataTableStorage", new
+                                 {
+                                     PartitionKey = item.PartitionKey
+                                 })">Edit</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
