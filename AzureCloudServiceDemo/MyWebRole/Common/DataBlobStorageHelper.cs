@@ -23,7 +23,7 @@ namespace MyWebRole.Common
                     .CreateIfNotExist();
             return client.GetContainerReference(_containerName);
         }
-        public static void UploadFile(HttpPostedFileBase imageFile)//string fileName, string contentType, byte[] data)
+        public static string UploadFile(HttpPostedFileBase imageFile)//string fileName, string contentType, byte[] data)
         {
             //获得BlobContainer对象并把文件上传到这个Container
             var blob = GetContainer().GetBlockBlobReference(imageFile.FileName);
@@ -33,6 +33,8 @@ namespace MyWebRole.Common
             {
                 blob.UploadFromStream(ms);
             }
+
+            return blob.Uri.AbsoluteUri;
         }
         public static void DeleteFile(string fileUrl)
         {

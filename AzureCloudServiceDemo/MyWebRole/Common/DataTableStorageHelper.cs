@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Storage.Table;
@@ -25,7 +26,9 @@ namespace MyWebRole.Common
         }
 
         public static void InsertData(CustomerEntity customer)
-        {                       
+        {
+            customer.PartitionKey = Guid.NewGuid().ToString();
+            customer.RowKey = "";
             TableOperation insertOperation = TableOperation.Insert(customer);        
             GetTable().Execute(insertOperation);
         }
@@ -43,7 +46,7 @@ namespace MyWebRole.Common
 
         public static List<CustomerEntity> GetData()
         {
-            TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>();               
+            TableQuery<CustomerEntity> query = new TableQuery<CustomerEntity>();        
             return GetTable().ExecuteQuery(query).ToList();
         }
 
@@ -60,58 +63,44 @@ namespace MyWebRole.Common
 
         public static CustomerEntity GetSingleData(CustomerEntity customer)
         {
-            // Create a retrieve operation that takes a customer entity.
-            TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>(customer.PartitionKey, "");
+            var retrievedResult = RetrievedResult(customer);
 
-            // Execute the retrieve operation.
-            TableResult retrievedResult = GetTable().Execute(retrieveOperation);
             return (CustomerEntity)retrievedResult.Result;
-        }
-
+        }    
         public static void DeleteData(CustomerEntity customer)
         {
-            // Create a retrieve operation that expects a customer entity.
-            TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>(customer.PartitionKey,"");
-
-            // Execute the operation.
-            TableResult retrievedResult = GetTable().Execute(retrieveOperation);
-
-            // Assign the result to a CustomerEntity.
-            CustomerEntity deleteEntity = (CustomerEntity)retrievedResult.Result;
-           
-            TableOperation deleteOperation = TableOperation.Delete(deleteEntity);
-
-            // Execute the operation.
+            var retrievedResult = RetrievedResult(customer);
+  
+            CustomerEntity deleteEntity = (CustomerEntity)retrievedResult.Result;           
+            TableOperation deleteOperation = TableOperation.Delete(deleteEntity);        
             GetTable().Execute(deleteOperation);
 
         }
 
         public static void ModifyData(CustomerEntity customer)
         {
-            
-            // Create a retrieve operation that takes a customer entity.
-            TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>(customer.PartitionKey,"");
-
-            // Execute the operation.
-            TableResult retrievedResult = GetTable().Execute(retrieveOperation);
-
-            // Assign the result to a CustomerEntity object.
-            CustomerEntity updateEntity = (CustomerEntity)retrievedResult.Result;
-
+           var retrievedResult = RetrievedResult(customer);
+         
+           CustomerEntity updateEntity = (CustomerEntity)retrievedResult.Result;
             if (updateEntity != null)
             {
-                // Change the phone number.
+                
                 updateEntity.FirstName = customer.FirstName;
                 updateEntity.LastName = customer.LastName;
                 updateEntity.Email = customer.Email;
                 updateEntity.PhoneNumber = customer.PhoneNumber;
-
-                // Create the InsertOrReplace TableOperation
-                TableOperation updateOperation = TableOperation.Replace(updateEntity);
-
-                // Execute the operation.
+                updateEntity.Picture = customer.Picture;
+              
+                TableOperation updateOperation = TableOperation.Replace(updateEntity);               
                 GetTable().Execute(updateOperation);
             }
+        }
+
+        private static TableResult RetrievedResult(CustomerEntity customer)
+        {
+            TableOperation retrieveOperation = TableOperation.Retrieve<CustomerEntity>(customer.PartitionKey, "");
+            TableResult retrievedResult = GetTable().Execute(retrieveOperation);
+            return retrievedResult;
         }
 
     }

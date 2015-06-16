@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Web;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
 using MyWebRole.Common;
@@ -42,8 +43,13 @@ namespace MyWebRole.Controllers
         }
 
         [HttpPost]
-        public ActionResult Edit(CustomerEntity customer)
+        public ActionResult Edit(HttpPostedFileBase imageFile, CustomerEntity customer)
         {
+            if (imageFile != null)
+            {
+                var imageUrl = DataBlobStorageHelper.UploadFile(imageFile);
+                customer.Picture = imageUrl;                
+            }            
             DataTableStorageHelper.ModifyData(customer);
             return RedirectToAction("Index", "DataTableStorage");
         } 
@@ -53,13 +59,14 @@ namespace MyWebRole.Controllers
         {
             return View();
         }
-
         [HttpPost]
-        public ActionResult InsertData(CustomerEntity customer)
+        public ActionResult InsertData(HttpPostedFileBase imageFile,CustomerEntity customer)
         {
-            customer.PartitionKey = Guid.NewGuid().ToString();
-            customer.RowKey = "";
-
+            if (imageFile != null)
+            {
+                var imageUrl = DataBlobStorageHelper.UploadFile(imageFile);
+                customer.Picture = imageUrl;
+            }
             DataTableStorageHelper.InsertData(customer);
             return RedirectToAction("Index", "DataTableStorage");
         } 

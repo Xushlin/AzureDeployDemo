@@ -26,5 +26,7 @@ namespace MyWebRole.Models
         //For any property that should be stored in the table service, the property must be a public property of a supported type that exposes both get and set.        
         public string Email { get; set; }
         public string PhoneNumber { get; set; }
+
+        public string Picture { get; set; }
     }
 }
