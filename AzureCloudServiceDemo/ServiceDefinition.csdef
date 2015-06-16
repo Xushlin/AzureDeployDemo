@@ -21,6 +21,12 @@
     <Startup priority="-2">
       <Task commandLine="Microsoft.WindowsAzure.Caching\ClientPerfCountersInstaller.exe install" executionContext="elevated" taskType="simple" />
     </Startup>
+    <Imports>
+      <Import moduleName="Caching" />
+    </Imports>
+    <LocalResources>
+      <LocalStorage name="DiagnosticStore" sizeInMB="20000" cleanOnRoleRecycle="false" />
+    </LocalResources>
   </WebRole>
   <WorkerRole name="MyCacheRole" vmsize="Small">
     <ConfigurationSettings>
