@@ -16,7 +16,8 @@ namespace MyWebRole.Common
 
         public static CloudTable GetTable()
         {
-            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(CloudConfigurationManager.GetSetting("StorageConnectionString"));
+            CloudStorageAccount storageAccount = CloudStorageAccount.Parse(
+                CloudConfigurationManager.GetSetting("StorageConnectionString"));
 
             CloudTableClient tableClient = storageAccount.CreateCloudTableClient();
             

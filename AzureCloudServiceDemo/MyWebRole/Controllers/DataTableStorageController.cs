@@ -68,6 +68,9 @@ namespace MyWebRole.Controllers
                 customer.Picture = imageUrl;
             }
             DataTableStorageHelper.InsertData(customer);
+
+            DataQueueStorageHelper.InsertQueue("FirstName:"+customer.FirstName+", LastName:"+customer.LastName);
+
             return RedirectToAction("Index", "DataTableStorage");
         } 
     }

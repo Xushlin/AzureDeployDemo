@@ -1,0 +1,67 @@
+﻿@model List<Microsoft.WindowsAzure.Storage.Queue.CloudQueueMessage>
+
+@{
+    ViewBag.Title = "title";
+}
+
+
+<div class="row">
+    <table class="table table-hover table-condensed">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Content</th>
+                <th>DequeueCount</th>
+                <th>ExpirationTime</th>
+                <th>InsertionTime</th>
+                <th>NextVisibleTime</th>
+                <th>PopReceipt</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @item.Id
+                    </td>
+                    <td>
+                        @item.AsString
+                    </td>
+                    <td>
+                        @item.DequeueCount
+                    </td>
+                    <td>
+                        @item.ExpirationTime
+                    </td>
+                    <td>
+                        @item.InsertionTime
+                    </td>
+                    <td>
+                        @item.NextVisibleTime
+                    </td>
+                    <td>
+                        @item.PopReceipt
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+
+
+
+<div class="row">
+    <a href="@Url.Action("PeekQueue", "DataQueueStorage")">PeekQueue</a>
+</div>
+<div class="row">
+    <a href="@Url.Action("ChangeMessageContent", "DataQueueStorage")">ChangeMessageContent</a>
+</div>
+<div class="row">
+    <a href="@Url.Action("DeQueueMessage", "DataQueueStorage")">DeQueueMessage</a>
+</div>
+<div class="row">
+    <a href="@Url.Action("DeleteQueue", "DataQueueStorage")">DeleteQueue</a>
+</div>

@@ -217,10 +217,11 @@
     <Compile Include="App_Start\IdentityConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="Common\DataQueueStorageHelper.cs" />
     <Compile Include="Common\DataBlobStorageHelper.cs" />
     <Compile Include="Common\DataTableStorageHelper.cs" />
     <Compile Include="Controllers\AccountController.cs" />
-    <Compile Include="Controllers\DataBlobStorageController.cs" />
+    <Compile Include="Controllers\DataQueueStorageController.cs" />
     <Compile Include="Controllers\DataTableStorageController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -326,12 +327,11 @@
     <None Include="Service References\ServiceReference1\Service12.xsd">
       <SubType>Designer</SubType>
     </None>
-    <Content Include="Views\DataBlobStorage\Detail.cshtml" />
-    <Content Include="Views\DataBlobStorage\Index.cshtml" />
     <Content Include="Views\DataTableStorage\Detail.cshtml" />
     <Content Include="Views\DataTableStorage\EditCustomer.cshtml" />
     <Content Include="Views\DataTableStorage\Index.cshtml" />
     <Content Include="Views\DataTableStorage\InsertData.cshtml" />
+    <None Include="Views\DataQueueStorage\Index.cshtml" />
     <None Include="Web.Develop.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
