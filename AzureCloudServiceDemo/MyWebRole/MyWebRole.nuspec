@@ -2,12 +2,12 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
   <metadata>
     <id>AzureCloudServiceDemo</id>
-    <version>1.1.3</version>
-    <authors>Test</authors>
+    <version>$Version$</version>
+    <authors>Michael</authors>
     <description>AzureCloudServiceDemo</description>
   </metadata>
   <files>
-    <file src="..\bin\Release\app.publish\*" target=""/>
-    <file src="..\bin\Release\app.publish\Extensions\*" target=""/>
+    <file src="..\bin\$configuration$\app.publish\*" target=""/>
+    <file src="..\bin\$configuration$\app.publish\Extensions\*" target=""/>
   </files>
 </package>

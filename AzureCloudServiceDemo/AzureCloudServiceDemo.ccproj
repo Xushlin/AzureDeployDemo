@@ -72,7 +72,7 @@
     <VisualStudioVersion Condition=" '$(VisualStudioVersion)' == '' ">10.0</VisualStudioVersion>
     <CloudExtensionsDir Condition=" '$(CloudExtensionsDir)' == '' ">$(MSBuildExtensionsPath)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Windows Azure Tools\2.6\</CloudExtensionsDir>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)' == 'Development' ">
+  <PropertyGroup Condition=" '$(Configuration)' == 'Develop' ">
     <OutputPath>bin\Development\</OutputPath>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Production' ">
