@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyCacheRole", "MyCacheRole\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWCFService", "MyWCFService\MyWCFService.csproj", "{D98E9308-BE8E-4E16-9AE8-F3F7E1FA665D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WorkerRoleQueue", "WorkerRoleQueue\WorkerRoleQueue.csproj", "{B40F0369-C7CE-45B0-BD4B-762BC3B8980F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -72,6 +74,14 @@ Global
 		{D98E9308-BE8E-4E16-9AE8-F3F7E1FA665D}.Production|Any CPU.Build.0 = Release|Any CPU
 		{D98E9308-BE8E-4E16-9AE8-F3F7E1FA665D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D98E9308-BE8E-4E16-9AE8-F3F7E1FA665D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B40F0369-C7CE-45B0-BD4B-762BC3B8980F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40F0369-C7CE-45B0-BD4B-762BC3B8980F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B40F0369-C7CE-45B0-BD4B-762BC3B8980F}.Develop|Any CPU.ActiveCfg = Debug|Any CPU
+		{B40F0369-C7CE-45B0-BD4B-762BC3B8980F}.Develop|Any CPU.Build.0 = Debug|Any CPU
+		{B40F0369-C7CE-45B0-BD4B-762BC3B8980F}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{B40F0369-C7CE-45B0-BD4B-762BC3B8980F}.Production|Any CPU.Build.0 = Release|Any CPU
+		{B40F0369-C7CE-45B0-BD4B-762BC3B8980F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B40F0369-C7CE-45B0-BD4B-762BC3B8980F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

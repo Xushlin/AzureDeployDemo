@@ -62,17 +62,27 @@
       <RoleName>MyWebRole</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
+    <ProjectReference Include="WorkerRoleQueue\WorkerRoleQueue.csproj">
+      <Name>WorkerRoleQueue</Name>
+      <Project>{b40f0369-c7ce-45b0-bd4b-762bc3b8980f}</Project>
+      <Private>True</Private>
+      <RoleType>Worker</RoleType>
+      <RoleName>WorkerRoleQueue</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MyCacheRoleContent\" />
     <Folder Include="MyWCFServiceContent\" />
     <Folder Include="MyWebRoleContent\" />
     <Folder Include="Profiles" />
+    <Folder Include="WorkerRoleQueueContent\" />
   </ItemGroup>
   <ItemGroup>
     <DiagnosticsConfiguration Include="MyCacheRoleContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="MyWCFServiceContent\diagnostics.wadcfgx" />
     <DiagnosticsConfiguration Include="MyWebRoleContent\diagnostics.wadcfgx" />
+    <DiagnosticsConfiguration Include="WorkerRoleQueueContent\diagnostics.wadcfgx" />
   </ItemGroup>
   <ItemGroup>
     <PublishProfile Include="Profiles\shinetech-demoProduction.azurePubxml" />
