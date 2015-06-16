@@ -1,16 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
-using Microsoft.ApplicationServer.Caching;
+using MyCacheRole;
 
 namespace MyWebRole.Controllers
 {
     public class HomeController : Controller
     {
-        public static DataCacheFactory myFactory;
-        public static DataCache myCache;
+        
         public static Random randomizer = new Random();
 
         public ActionResult Index()
@@ -18,23 +14,17 @@ namespace MyWebRole.Controllers
             return View();
         }
 
+        public string GetCacheMessage()
+        {
+            var cacheWorkerRole=new CacheWorkerRole();
+            return cacheWorkerRole.GetCacheMessage();
+        }
+
         public ActionResult CallWCFService()
         {
             var client = new ServiceReference1.Service1Client();
             var model = new ServiceReference1.WCFModel(){FirstName = "Peter",LastName = "Lee"};
             return Content(client.ShowName(model));
-        }
-
-        public string GetCacheMessage()
-        {
-            if (myCache == null)
-            {
-                myFactory = new DataCacheFactory();
-                myCache = myFactory.GetDefaultCache();
-                myCache.Put("MyCache", "Welcome to use cache!");
-            }
-
-            return  myCache.Get("MyCache") as string;
         }
 
         public ActionResult About()
